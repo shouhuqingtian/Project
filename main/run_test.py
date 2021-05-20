@@ -84,7 +84,7 @@ class RunTest:
                 else:
                     self.data.write_result(i, '失败')
                     fail_count.append(i)
-                    print('测试失败了')
+                    print('测试失败')
 
                 print(pass_count, fail_count)
         self.sendmail.send_main(pass_count, fail_count)
