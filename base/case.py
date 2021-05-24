@@ -1,8 +1,6 @@
 import unittest
 from base.get_post import RunMain
-import json
 import mock
-from HTMLTestRunner import HTMLTestRunner
 import HTMLTestRunner
 from base.study_mock import mock_test
 
