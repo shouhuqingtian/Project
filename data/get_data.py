@@ -8,7 +8,7 @@ class GetData:
     def __init__(self):
         self.opera_excel = OperationExcel()
 
-    # 获取excel行数
+    # 获取excel行数()
     def get_case_lines(self):
         return self.opera_excel.get_lines()
 
