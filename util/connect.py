@@ -3,7 +3,6 @@ import json
 import MySQLdb.cursors
 
 
-
 class OperationMysql:
     def __init__(self):
         self.conn = MySQLdb.Connect(
