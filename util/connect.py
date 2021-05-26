@@ -26,7 +26,7 @@ class OperationMysql:
 
 if __name__ == '__main__':
     op_mysql = OperationMysql()
-    print(op_mysql.search_one("SELECT * FROM web_user WHERE NAME = '刘大爷'"))
+    print(op_mysql.search_one("SELECT * FROM web_user WHERE NAME = '陛下'"))
 
 # cur.execute("SELECT * FROM web_user WHERE NAME = 'test'")
 # print(cur.fetchone())
