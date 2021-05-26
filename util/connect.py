@@ -6,10 +6,10 @@ import MySQLdb.cursors
 class OperationMysql:
     def __init__(self):
         self.conn = MySQLdb.Connect(
-            host='localhost',
+            host='159.75.96.188',
             port=3306,
             user='root',
-            passwd='123456',
+            passwd='bo69nyCG7t04',
             db='le_study',
             charset='gbk',
             cursorclass=MySQLdb.cursors.DictCursor
