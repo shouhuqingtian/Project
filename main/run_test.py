@@ -15,7 +15,9 @@ env_variable = [r'D:\Python Project\main',
                 r'D:\Python Project',
                 r'D:\Python Project\venv\lib\site-packages',
                 r'C:\Users\Administrator\AppData\Local\Programs\Python\Python37\Lib\site-packages',
-                r'C:\Users\Administrator\AppData\Roaming\Python\Python37\site-packages']
+                r'C:\Users\Administrator\AppData\Roaming\Python\Python37\site-packages',
+                r'/var/lib/jenkins/workspace/心护士App接口自动化/venv\lib\site-packages'
+                ]
 sys.path.extend(env_variable)
 import urllib3
 from base.runmethod import RunMethod
