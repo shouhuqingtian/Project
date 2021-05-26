@@ -20,7 +20,6 @@ class DependentDate:
     def run_dependent(self):
         run_method = RunMethod()
         row_num = self.opera_excel.get_rows_data(self.case_id)
-        print('111111', row_num, )
         request_data = self.get_data.get_data_for_json(row_num)
         header = self.get_data.is_header(row_num)
         method = self.get_data.get_request_method(row_num)
@@ -33,7 +32,6 @@ class DependentDate:
         depend_data = self.get_data.get_depend_key(row)
         print('2', depend_data)
         response_data = self.run_dependent()
-        print('111', response_data)
         json_exe = parse(depend_data)
         madle = json_exe.find(response_data)
         return [math.value for math in madle][0]

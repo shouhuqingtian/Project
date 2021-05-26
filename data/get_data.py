@@ -4,6 +4,7 @@ from data import data_config
 from util.operation_json import OperationJson
 from util.connect import OperationMysql
 
+
 class GetData:
     def __init__(self):
         self.opera_excel = OperationExcel()
