@@ -30,7 +30,6 @@ class DependentDate:
     # 根据依赖值执行来测试case并返回
     def get_data_for_key(self, row):
         depend_data = self.get_data.get_depend_key(row)
-        print('2', depend_data)
         response_data = self.run_dependent()
         json_exe = parse(depend_data)
         madle = json_exe.find(response_data)

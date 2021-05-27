@@ -3,6 +3,21 @@ import smtplib
 from email.mime.text import MIMEText
 
 
+def send_email(user_list, sub, content):
+    user = '刘斌' + '<' + send_user + '>'
+    message = MIMEText(content, _subtype='plain', _charset='utf-8')
+    message['Subject'] = sub
+    message['from'] = user
+    message['to'] = ';'.join(user_list)
+    # server = smtplib.SMTP()
+    # server.connect(email_host)
+    server = smtplib.SMTP_SSL(email_host)   # Centos邮件发送配置
+    server.ehlo(email_host)
+    server.login(send_user, email_password)
+    server.sendmail(user, user_list, message.as_string())
+    server.close()
+
+
 class SendEmail:
     global send_user
     global email_host
@@ -12,20 +27,6 @@ class SendEmail:
     email_password = 'jqmarfxppnmzbjhc'
 
 # 构建模块
-    def send_email(self, user_list, sub, content):
-        user = '刘斌' + '<' + send_user + '>'
-        message = MIMEText(content, _subtype='plain', _charset='utf-8')
-        message['Subject'] = sub
-        message['from'] = user
-        message['to'] = ';'.join(user_list)
-        # server = smtplib.SMTP()
-        # server.connect(email_host)
-        # Centos邮件发送配置
-        server = smtplib.SMTP_SSL(email_host)
-        server.ehlo(email_host)
-        server.login(send_user, email_password)
-        server.sendmail(user, user_list, message.as_string())
-        server.close()
 
     def send_main(self, pass_list, fail_list):
         pass_num = float(len(pass_list))
@@ -37,7 +38,7 @@ class SendEmail:
         sub = '接口自动化测试报告'
         content = '此次运行接口个数%s个，通过个数为%s个，失败个数为%s个，通过率为%s，失败率为%s' % (count_num, pass_num, fail_num,
                                                                    pass_result, fail_result)
-        self.send_email(user_list, sub, content)
+        send_email(user_list, sub, content)
 
 
 if __name__ == '__main__':
