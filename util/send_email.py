@@ -18,8 +18,11 @@ class SendEmail:
         message['Subject'] = sub
         message['from'] = user
         message['to'] = ';'.join(user_list)
-        server = smtplib.SMTP()
-        server.connect(email_host)
+        # server = smtplib.SMTP()
+        # server.connect(email_host)
+        # Centos邮件发送配置
+        server = smtplib.SMTP_SSL(email_host)
+        server.ehlo(email_host)
         server.login(send_user, email_password)
         server.sendmail(user, user_list, message.as_string())
         server.close()
