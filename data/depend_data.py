@@ -31,6 +31,7 @@ class DependentDate:
     def get_data_for_key(self, row):
         depend_data = self.get_data.get_depend_key(row)
         response_data = self.run_dependent()
+        print(response_data)
         json_exe = parse(depend_data)
         madle = json_exe.find(response_data)
         return [math.value for math in madle][0]
